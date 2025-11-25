@@ -1,6 +1,11 @@
-const loginForm = document.getElementById("login-form");
+// const loginForm = document.getElementById("login-form");
+const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector("button");
+
+const link = document.querySelector("a");
+
+let username;
 
 function handleButtonClicked() {
     // console.dir(loginInput);
@@ -15,4 +20,20 @@ function handleButtonClicked() {
     
 }
 
-loginButton.addEventListener("click", handleButtonClicked);
+function onLoginSubmit(randarg) {
+    // randarg.preventDefault();
+    // const username = loginInput.value;
+    username = loginInput.value;
+    console.log(username);
+    console.log(randarg);
+}
+
+function whenLinkClicked(arg) {
+    alert("clicked!");
+    arg.preventDefault();
+}
+
+console.log(username);
+// loginButton.addEventListener("click", handleButtonClicked);
+loginForm.addEventListener("submit",onLoginSubmit);
+link.addEventListener("click",whenLinkClicked);
