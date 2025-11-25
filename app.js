@@ -2,6 +2,7 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector("button");
+const greeting = document.querySelector("#greeting");
 
 const link = document.querySelector("a");
 
@@ -21,16 +22,23 @@ function handleButtonClicked() {
 }
 
 function onLoginSubmit(randarg) {
-    // randarg.preventDefault();
+    randarg.preventDefault();
     // const username = loginInput.value;
-    username = loginInput.value;
+    // username = loginInput.value;
+    loginForm.classList.add("hidden");
+    const username = loginInput.value;
     console.log(username);
     console.log(randarg);
+    // greeting.innerText = "Hello " + username;
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove("hidden")
 }
 
 function whenLinkClicked(arg) {
-    alert("clicked!");
+    console.log(arg);
     arg.preventDefault();
+    alert("clicked!");
+    // arg.preventDefault();
 }
 
 console.log(username);
