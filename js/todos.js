@@ -3,12 +3,12 @@ const todoInput = todo.querySelector("input");
 const todoList = document.querySelector("todo-list");
 // const HIDDEN_CLASSNAME = "hidden"
 
-if (savedUsername != null){
-    showTodo();
-    todo.classList.remove(HIDDEN_CLASSNAME);
-    todo.addEventListener("submit", addTodo);
-    // todo.addEventListener("submit", showTodo);
-}
+// if (savedUsername != null){
+//     showTodo();
+//     todo.classList.remove(HIDDEN_CLASSNAME);
+//     todo.addEventListener("submit", addTodo);
+//     // todo.addEventListener("submit", showTodo);
+// }
 
 function addTodo_myself(event) {
     // const todo = document.createElement("h2");
@@ -29,3 +29,12 @@ function showTodo() {
         document.body.appendChild(todo);
     }
 }
+
+function handleToDoSubmit(event) {
+    event.preventDefault();
+    console.log(todoInput.value);
+    const newTodo = todoInput.value;
+    todoInput.value = "";
+}
+
+todo.addEventListener("submit", handleToDoSubmit);
