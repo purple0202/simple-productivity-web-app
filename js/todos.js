@@ -31,9 +31,12 @@ function showTodo() {
     }
 }
 
+
 function deleteTodo(event){
-    console.log(event.target.parentNode.innerText);
+    const deleted = event.target.parentNode.id;
     todoList.removeChild(event.target.parentNode);
+    toDos = toDos.filter((item) => item.id !== parseInt(deleted));
+    saveToDos();
 }
 
 function paintToDo(newTodo){
@@ -43,9 +46,10 @@ function paintToDo(newTodo){
     const button = document.createElement("button");
     button.innerText = "❌";
     button.addEventListener("click", deleteTodo);
+    li.id = newTodo.id;
     li.appendChild(span);
     li.appendChild(button);
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     console.log(li);
     todoList.appendChild(li);
 
@@ -65,7 +69,7 @@ function handleToDoSubmit(event) {
     };
     toDos.push(newTodoObj);
     todoInput.value = "";
-    paintToDo(newTodo);
+    paintToDo(newTodoObj);
     saveToDos();
 }
 
