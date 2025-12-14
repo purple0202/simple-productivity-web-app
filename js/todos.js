@@ -23,6 +23,7 @@ function addTodo_myself(event) {
 }
 
 function showTodo() {
+    updateTodoVisibility();
     for(let i = 0; i<localStorage.length; i++){
         const todo = document.createElement("h2");
         console.log(localStorage.getItem(`todo${i}`))
@@ -33,6 +34,7 @@ function showTodo() {
 
 
 function deleteTodo(event){
+    updateTodoVisibility();
     const deleted = event.target.parentNode.id;
     todoList.removeChild(event.target.parentNode);
     toDos = toDos.filter((item) => item.id !== parseInt(deleted));
@@ -41,9 +43,12 @@ function deleteTodo(event){
 
 function paintToDo(newTodo){
     // console.log("i will paint", newTodo);
+    updateTodoVisibility();
     const li = document.createElement("li");
+    li.classList.add("todo-item");
     const span = document.createElement("span");
     const button = document.createElement("button");
+    button.classList.add("delete-btn");
     button.innerText = "❌";
     button.addEventListener("click", deleteTodo);
     li.id = newTodo.id;
@@ -55,8 +60,17 @@ function paintToDo(newTodo){
 
 }
 
+function updateTodoVisibility() {
+    if (toDos.length === 0) {
+      todoList.classList.add("hidden");
+    } else {
+      todoList.classList.remove("hidden");
+    }
+  }
+
 function saveToDos() {
     localStorage.setItem("todos", JSON.stringify(toDos));
+    updateTodoVisibility();
 }
 
 function handleToDoSubmit(event) {
@@ -73,6 +87,7 @@ function handleToDoSubmit(event) {
     saveToDos();
 }
 
+updateTodoVisibility();
 todo.addEventListener("submit", handleToDoSubmit);
 
 const savedItems = localStorage.getItem("todos");

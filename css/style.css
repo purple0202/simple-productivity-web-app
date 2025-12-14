@@ -1,3 +1,243 @@
+@font-face {
+    font-family: 'clockFont';
+    src : url('../fonts/Neutra-Text-TF-Light-Alt-Demi-Italic_32146.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .hidden{
     display: none;
 }
+
+#greeting {
+    position: fixed;
+    bottom: 300px;
+    left: 50%;
+    /* justify-content: center; */
+    text-align: center;
+    font-family: 'clockFont'; /* choose a nice font */
+    font-size: 1.5rem;
+    color: #ffd700; /* golden / warm color */
+    text-align: center;
+    font-style: italic; /* optional style */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* subtle shadow for contrast */
+    margin-top: 0; /* remove default spacing if needed */
+    background: rgba(101, 172, 219, 0.885); /* optional semi-transparent background */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    max-width: 80%; 
+  }
+
+#clock{
+    /* position: fixed;
+    top: 200px;
+    left: 50%; */
+    font-family: 'clockFont';
+    font-size: 15em;
+    color: white;
+    text-align: center;
+    text-shadow:
+        -2px -2px 0 rgb(255, 146, 50),
+        2px -2px 0 rgb(255, 146, 50),
+        -2px  2px 0 rgb(255, 146, 50),
+        2px  2px 0 rgb(255, 146, 50);
+}
+
+#todo-form {
+    position: fixed;
+    bottom: 20px;
+    right: 150px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  
+    background: rgba(0, 0, 0, 0.65);
+    padding: 1rem;
+    border-radius: 12px;
+  
+    font-family: inherit;
+  }
+  
+  /* Labels */
+  #todo-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    color: #ddd;
+  }
+  
+  /* Inputs */
+  #todo-form input {
+    margin-top: 0.25rem;
+    padding: 0.5rem 0.6rem;
+  
+    font-size: 1rem;
+    color: white;
+  
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+  
+    outline: none;
+  }
+  
+  /* Input focus state */
+  #todo-form input:focus {
+    border-color: #4fc3f7;
+    box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.3);
+  }
+  
+  /* Button */
+  .input-btn {
+    margin-top: 0.5rem;
+    padding: 0.6rem;
+  
+    font-size: 0.95rem;
+    font-weight: 600;
+  
+    color: white;
+    background: linear-gradient(135deg, #4fc3f7, #0288d1);
+    border: none;
+    border-radius: 10px;
+  
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  
+  /* Button hover / active */
+  .input-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .input-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  
+
+#todo-list{
+    position: fixed;
+    bottom: 150px;
+    right: 150px;
+    
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3rem;
+    border-radius: 8px;
+    
+}
+
+/* Make the li a flex container */
+.todo-item {
+    font-family: 'clockFont';
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* text left, button right */
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+
+  }
+  
+  /* Delete button */
+  .delete-btn {
+    background: #ff4d4d;         /* red button */
+    color: white;
+    border: none;
+    border-radius: 50%;          /* circle */
+    width: 24px;
+    height: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease, background 0.2s ease;
+    margin-left: 1rem;
+  }
+  
+  /* Hover effect */
+  .delete-btn:hover {
+    background: #ff1a1a;
+    transform: scale(1.2);
+  }
+  
+  /* Optional: Remove button outline when focused */
+  .delete-btn:focus {
+    outline: none;
+  }
+  
+  #quote {
+    position: fixed;           /* pin to viewport */
+    bottom: 20px;              /* distance from bottom */
+    left: 50%;                 /* center horizontally */
+    transform: translateX(-50%); /* perfect horizontal center */
+    
+    display: flex;
+    flex-direction: column;    /* stack spans vertically */
+    align-items: center;       /* center each line */
+    text-align: center;        /* center text */
+    
+    background: rgba(101, 172, 219, 0.885); /* optional semi-transparent background */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    max-width: 80%;            /* prevent text overflow */
+  }
+  
+  #quote-text {
+    font-family: 'Georgia', serif; /* elegant font for the quote */
+    font-size: 1.2rem;
+    color: #f0e68c;                /* warm accent color */
+    line-height: 1.4;
+  }
+  
+  #quote-author {
+    font-family: 'Georgia', serif; /* same font, italic */
+    font-size: 1rem;
+    font-style: italic;
+    color: #fff;                   /* lighter color for author */
+    margin-top: 0.2rem;            /* small spacing from quote text */
+  }
+
+  #weather {
+    position: fixed;           /* pin to viewport */
+    top: 50px;              /* distance from bottom */
+    left: 50px;                 /* center horizontally */
+
+    
+    display: flex;
+    flex-direction: column;    /* stack spans vertically */
+    align-items: center;       /* center each line */
+    text-align: center;        /* center text */
+    
+    background: rgba(101, 172, 219, 0.885); /* optional semi-transparent background */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    max-width: 80%;            /* prevent text overflow */
+  }
+  
+  #weather-text {
+    font-family: 'Georgia', serif; /* elegant font for the quote */
+    font-size: 1.2rem;
+    color: #f0e68c;                /* warm accent color */
+    line-height: 1.4;
+  }
+  
+  #location {
+    font-family: 'Georgia', serif; /* same font, italic */
+    font-size: 1rem;
+    font-style: italic;
+    color: #fff;                   /* lighter color for author */
+    margin-top: 0.2rem;            /* small spacing from quote text */
+  }
+  
+  

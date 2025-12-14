@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'clockFont';
+    src : url('./fonts/Neutra-Text-TF-Light-Alt-Demi-Italic_32146.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .hidden{
     display: none;
+}
+
+#clock{
+    /* font-family: 'clockFont'; */
+    /* font-size: 2em; */
+    color: white;
+    /* text-align: center; */
 }

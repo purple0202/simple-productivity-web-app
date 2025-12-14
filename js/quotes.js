@@ -2,11 +2,11 @@ const quotes = [
     { manga: "Jojo's Bizarre adventure",
         author: "Araki Hirohiko",
     },
-    { manga: "idk fuck",
-        author: "me",
+    { manga: "Berserk",
+        author: "Miura, Kentarou",
     },
-    { manga: "blue box",
-        author:"idk",
+    { manga: "One Piece",
+        author:"Oda Eiichiro",
     }
 ];
 
